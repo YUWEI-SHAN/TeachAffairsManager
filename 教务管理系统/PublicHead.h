@@ -1,58 +1,58 @@
 #pragma once
 /*
-* project: �������ϵͳ
+* project: 教务管理系统
 * file   : PublicHead.h
-* Copyright <c> ciallo all right reserved.
+* Copyright <c> ciallo all rights reserved.
 */
-//��������ͷ�ļ�
+//包含公共头文件
 #include <time.h>
 #include <math.h>
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
 #include <string.h>
-//ȡ��C4996���棬�Ա�scanf�Ⱥ���������
+//取消C4996警告，以便scanf等函数不报错
 #pragma warning(disable:4996)
-//��ʾ�ò������ڽ��ܺ��������
+//表示该参数用于接受函数的输入
 #define _IN_
-//��ʾ�ò������ڽ��ܺ���������
+//表示该参数用于接受函数的输出
 #define _OUT_
-//����NULL
+//定义NULL
 #ifndef NULL
 #define NULL (void*)0
 #endif // !NULL
-//����true �� false
+//定义true 和 false
 #ifndef true
 #define true 1
 #endif // !true
 #ifndef false
 #define false 0
 #endif // !false
-//С�ͺ�ű�
+//小型宏脚本
 #ifndef CHECK_NULL
-/**CHECKNULLϵ����һ�ַ�����жϱ����Ƿ�Ϊ�յķ���**/
+/**CHECKNULL系宏是一种方便的判断变量是否为空的方法**/
 /**
-����Դ��в�����ʹ�õ�ʱ���ڲ���������Ķ������ᱻֱ��ԭ�ⲻ�����Ƶ���Ӧλ��
+宏可以带有参数，使用的时候在参数处填入的东西都会被直接原封不动复制到对应位置
 **/
-//��һ�����Ǽ��q�����Ķ����ǲ���null���ǵĻ�����-1��ע�����������ֱ���ں����ﷵ�أ��걾��û�з���ֵ
+//这一个就是检查q代表的东西是不是null，是的话返回-1，注意这个返回是直接在函数里返回，宏本身没有返回值
 #define CHECK_NULL(q) if(q==NULL){return -1;}
-//��һ�����Ǽ��q�����Ķ����ǲ���null���ǵĻ�����NULL��ע�����������ֱ���ں����ﷵ�أ��걾��û�з���ֵ
+//这一个就是检查q代表的东西是不是null，是的话返回NULL，注意这个返回是直接在函数里返回，宏本身没有返回值
 #define CHECK_NULLPTR(q) if(q==NULL){return NULL;}
-//��һ�����Ǽ��q�����Ķ����ǲ���null���ǵĻ���ִ��r�����Ĵ��롣
-//r���Բ����ʾִ�пմ��룬�������ں������else�������ͻ��else��ǰ������if��������ʾ���q����NULLִ�е������
+//这一个就是检查q代表的东西是不是null，是的话就执行r代表的代码。
+//r可以不填，表示执行空代码，还可以在后面加入else，这样就会把else和前面的这个if关联，表示如果q不是NULL执行的情况。
 #define CHECK_NULLANY(q,r) if(q==NULL){r;}
 #endif // !CHECK_NULL
-/**�汾���Ʊ���**/
+/**版本控制变量**/
 #ifndef VERSION_CONTROL
 #define VERSION_CONTROL
 
 #define VERSION 1
-/**�����Ͷ���**/
-//�Ա𣬿�������̧��
+/**简单类型定义**/
+//性别，看不懂的抬走
 enum sex { male, female, other };
-//����
+//日期
 struct Date
 {
 	int Year; int Month; int Day;
 };
-#endif // !�汾���Ʊ���
+#endif // !版本控制变量
